@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#C2185B">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Academia da Sil</title>
+</head>
+<body>
+
+<header>Academia da Sil 💜</header>
+
+<!-- TELA HOJE -->
+<div id="tela-hoje" class="tela ativa">
+  <h2>Treino de hoje</h2>
+  <div id="hoje-conteudo"></div>
+  <div id="hoje-acoes"></div>
+</div>
+
+<!-- TELA PROGRAMAS -->
+<div id="tela-programa" class="tela">
+  <h2>Meu programa</h2>
+  <div id="programa-conteudo"></div>
+</div>
+
+<!-- TELA BIBLIOTECA -->
+<div id="tela-biblioteca" class="tela">
+  <h2>Biblioteca de exercícios</h2>
+  <div class="linha">
+    <select id="filtro-grupo">
+      <option value="">Todos os grupos</option>
+    </select>
+    <select id="filtro-tipo">
+      <option value="">Livre e máquina</option>
+      <option value="livre">Livre</option>
+      <option value="maquina">Máquina</option>
+    </select>
+  </div>
+  <div id="biblioteca-conteudo"></div>
+</div>
+
+<!-- TELA MEDIDAS -->
+<div id="tela-medidas" class="tela">
+  <h2>Minhas medidas</h2>
+  <div class="card">
+    <h3>Nova medição</h3>
+    <div class="linha"><input id="m-peso" type="number" step="0.1" placeholder="Peso (kg)"></div>
+    <div class="linha"><input id="m-cintura" type="number" step="0.1" placeholder="Cintura (cm)"></div>
+    <div class="linha"><input id="m-quadril" type="number" step="0.1" placeholder="Quadril (cm)"></div>
+    <div class="linha"><input id="m-peito" type="number" step="0.1" placeholder="Peito (cm)"></div>
+    <div class="linha"><input id="m-braco-d" type="number" step="0.1" placeholder="Braço D (cm)"></div>
+    <div class="linha"><input id="m-braco-e" type="number" step="0.1" placeholder="Braço E (cm)"></div>
+    <div class="linha"><input id="m-coxa-d" type="number" step="0.1" placeholder="Coxa D (cm)"></div>
+    <div class="linha"><input id="m-coxa-e" type="number" step="0.1" placeholder="Coxa E (cm)"></div>
+    <button onclick="salvarMedida()">Salvar medição</button>
+  </div>
+  <div id="medidas-historico"></div>
+</div>
+
+<!-- TELA CALENDÁRIO -->
+<div id="tela-calendario" class="tela">
+  <h2>Calendário</h2>
+  <div id="calendario-conteudo"></div>
+</div>
+
+<nav>
+  <button onclick="mostrarTela('hoje')" id="nav-hoje" class="ativo">Hoje</button>
+  <button onclick="mostrarTela('programa')" id="nav-programa">Programa</button>
+  <button onclick="mostrarTela('biblioteca')" id="nav-biblioteca">Biblioteca</button>
+  <button onclick="mostrarTela('medidas')" id="nav-medidas">Medidas</button>
+  <button onclick="mostrarTela('calendario')" id="nav-calendario">Calendário</button>
+</nav>
+
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
